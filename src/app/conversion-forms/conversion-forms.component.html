@@ -1,0 +1,98 @@
+<form class="conversion-forms">
+	<table>
+		<tr>
+			<th>Imperial</th>
+			<th>Metric</th>
+		</tr>
+		<tr>
+			<td>
+				<label for="gallons">Gallons(to liters): </label>
+				<input [(ngModel)] = "gallons" type="number" id="gallons" name="gallons">&nbsp;&nbsp;
+				<span *ngIf="gallons"><b>{{calculateLiters(gallons) | number }} Liter(s)</b></span>&nbsp;
+			</td>
+			<td>
+				<label for="liters">Liters(to gallons): </label>
+				<input [(ngModel)] = "liters"  type="number" id="liters" name="liters"> &nbsp;&nbsp;
+				<span  *ngIf="liters"><b> {{calculateGallons(liters) | number }} Gallon(s)</b></span>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<label for="pounds">Pounds(to kilograms): </label>
+				<input [(ngModel)] = "pounds" type="number" id="pounds" name="pounds"> &nbsp;&nbsp;
+				<span *ngIf="pounds"><b> {{calculateKilograms(pounds)| number}} Kilogram(s)</b></span>&nbsp;&nbsp;
+			</td>
+			<td>
+				<label for="kilograms">Kilograms(to pounds): </label>
+				<input [(ngModel)] = "kilograms" type="number" id="kilograms" name="kilograms">&nbsp;&nbsp;
+				<span *ngIf="kilograms"><b> {{calculatePounds(kilograms) | number}} Pound(s)</b></span>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<label for="feet">Feet(to meters): </label>
+				<input [(ngModel)] = "feet" type="number" id="feet" name="feet">&nbsp;
+				<span *ngIf="feet"><b> {{calculateMeters(feet)| number}} meter</b></span>
+			</td>
+			<td>
+				<label for="meters">Meters(to feet): </label>
+				<input [(ngModel)] = "meters" type="number" id="meters" name="meters">&nbsp;&nbsp;
+				<span *ngIf="meters"><b> {{calculateFeet(meters) | number}} Feet</b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<br>
+		<tr>  
+			<td>
+				<label for="inches">Inches(to meters): </label>
+				<input [(ngModel)] = "inches" type="number" id="inches" name="inches">&nbsp;
+				<span *ngIf="inches"><b> {{calculateMetersInches(inches)| number}} meter or {{calculateMetersInches(inches) * 100| number}} cm </b></span>
+			</td>
+			<td>
+				<label for="metersToInches">Meters(to inches): </label>
+				<input [(ngModel)] = "metersToInches" type="number" id="metersToInches" name="metersToInches">&nbsp;&nbsp;
+				<span *ngIf="metersToInches"><b> {{calculateInches(metersToInches) | number}} Inches</b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<label for="miles">Miles(to kilometer): </label>
+				<input [(ngModel)] = "miles" type="number" id="miles" name="miles">&nbsp;&nbsp;
+				<span *ngIf="miles"><b> {{calculateKilometers(miles) | number}} Kilometer(s)</b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td>
+				<label for="kilometers">Kilometer(to miles): </label>
+				<input [(ngModel)] = "kilometers" type="number" id="kilometers" name="kilometers">&nbsp;&nbsp;
+				<span *ngIf="kilometers"><b> {{calculateMiles(kilometers) | number}} Miles(s)</b></span>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<label for="fahrenheits">Fahrenheit(to Celsius): </label>
+				<input [(ngModel)] = "fahrenheits" type="number" id="fahrenheits" name="fahrenheits">&nbsp;&nbsp;
+				<span *ngIf="fahrenheits"><b> {{calculateCelsius(fahrenheits) | number}} Celsius</b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td>
+				<label for="celsius">Celsius(to Fahrenheit): </label>
+				<input [(ngModel)] = "celsius" type="number" id="celsius" name="celsius">&nbsp;&nbsp;
+				<span *ngIf="celsius"><b> {{(celsius * 1.8) + 32 | number}} Fahrenheit</b></span>
+			</td>
+		</tr>
+	</table>
+</form>
+<div class="claculation-info">
+	<hr>
+	<h3>The calculations used the below ratios and results shown up to <em>3 digits after decimal point.</em></h3>
+	<ul>
+		<li>Liter per Gallon: <strong>{{LITERS_PER_GALLON}}</strong></li>
+		<li>Pound per Kilogram: <strong>{{POUNDS_PER_KILOGRAM}}</strong></li>
+		<li>Feet per Meter: <strong>{{FEET_PER_METER}}</strong></li>
+		<li>Inches per meter: <strong>{{INCHES_PER_METER}}</strong></li>
+		<li>Kilometer per Mile: <strong>{{KILOMETERS_PER_MILE}}</strong></li>
+		<li>Fahrenheit to Celsius formula:<strong> {{FAHRENHEIT_CONVERT_CELSIUS}}</strong></li>
+		<li>Celsius to Fahrenheit formula: <strong>{{CELSIUS_CONVERT_FAHRENHEIT}}</strong></li>
+	</ul>
+</div>
